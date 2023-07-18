@@ -1,22 +1,14 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import MovieList from "./components/MovieList";
-import { movieData } from "./constants/MovieData";
-import { useState } from "react";
-import Add from "./components/Add";
-import Filter from "./components/Filter";
-
+import { Routes, Route } from "react-router-dom"
+import Home from "./page/Home"
+import Film from "./page/Film"
 
 const App = () => {
-	const [movies, setMovies] = useState(movieData)
-	const originalMovies = [...movieData]
 	return (
-		<div className="bg-secondary bg-gradient rounded-4 w-75 my-5 mx-auto text-white" style={{width: "1300px"}}>
-			<Add movies={movies} setMovies={setMovies} />
-			<Filter movies={movies} setMovies={setMovies}  originalMovies={originalMovies}/>
-			<MovieList movies={movies} setMovies={setMovies} />
-		</div>
-	);
-};
+			<Routes>
+				<Route path="/" element={<Home />} /> 
+				<Route path="/Film" element={<Film />} />
+			</Routes>
+	)
+}
 
-export default App;
+export default App
