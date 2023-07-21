@@ -1,17 +1,18 @@
-import { useLocation } from "react-router-dom";
-
-const Description = () => {
-    const location = useLocation()
-    const { title, description, posterURL, rating } = location.state
+/* eslint-disable react/prop-types */
+const Descriptions = ({ movies , filmDesc }) => {
+    const [movie] = movies.filter((movie) => movie.title === filmDesc)
+    console.log(movie)
 
     return (
-        <>
-            <img src={posterURL} alt={title}/>
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <p>{rating}</p>
-        </>
+        <div className="d-flex flex-wrap justify-content-center" style={{width: "1500px"}}>   
+            <div className="text-center">
+                <img src={movie.descURL} alt={movie.title}/>
+                <h2>{movie.title}</h2>
+                <p>{movie.description}</p>
+                <p>{movie.rating}</p>
+            </div>
+        </div>
     )
 }
 
-export default Description;
+export default Descriptions;

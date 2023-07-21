@@ -6,11 +6,12 @@ import Description from "./page/Description"
 
 const App = () => {
 	const [movies, setMovies] = useState(movieData)
+	const [filmDesc, setFilmDesc] = useState("")
 
 	return (
 			<Routes>
-				<Route path="/" element={<Home />} /> 
-				<Route path="/Description" element={<Description movies={movies} setMovies={setMovies} />} />
+				<Route path="/" element={<Home setFilmDesc={setFilmDesc} />} /> 
+				<Route path="/Description" element={<Description movies={movies} setMovies={setMovies} filmDesc={filmDesc} />} />
 			</Routes>
 	)
 }

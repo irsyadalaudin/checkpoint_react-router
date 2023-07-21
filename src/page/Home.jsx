@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import HomeMovie from "../components/HomeMovie"
 
-const Home = () => {
+const Home = ({ setFilmDesc }) => {
+
     return (
-        <HomeMovie />
+        <HomeMovie setFilmDesc={setFilmDesc}/>
     )
 }
 

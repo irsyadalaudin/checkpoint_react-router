@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom"
 
 /* eslint-disable react/prop-types */
-const MovieCard = ( {title, description, posterURL, rating} ) => {
+const MovieCard = ( {title, description, posterURL, rating, setFilmDesc} ) => {
     const navigate = useNavigate()
 
     const handleMovieClick = () => {
-        navigate(`/Description/${(title)}`);
+        setFilmDesc(title)
+        navigate("/Description/");
     };
 
     return (
