@@ -19,4 +19,4 @@ const MovieCard = ( {title, description, posterURL, rating, setFilmDesc} ) => {
     )
 }
 
-export default MovieCard;
+export default MovieCard

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import MovieCard from "./MovieCard";
+import MovieCard from "./MovieCard"
 
 const MovieList = ({ movies, setFilmDesc }) => {
     return (
@@ -11,4 +11,4 @@ const MovieList = ({ movies, setFilmDesc }) => {
     );
 };
 
-export default MovieList;
+export default MovieList

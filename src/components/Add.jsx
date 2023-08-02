@@ -9,10 +9,10 @@ const Add = ({movies, setMovies}) => {
 
     const addMovie = () => {
         const newMovie = {
-            title: title,
-            description: description,
-            posterURL: posterURL,
-            rating: rating
+            title,
+            description,
+            posterURL,
+            rating
             };
             setMovies([...movies, newMovie]);
 
@@ -40,3 +40,47 @@ const Add = ({movies, setMovies}) => {
 }
 
 export default Add;
+
+
+
+/* NOTES
+
+// 1
+    const addMovie = () => {
+    const newMovie = {
+        title: title,
+        description: description,
+        posterURL: posterURL,
+        rating: rating
+    };
+    setMovies([...movies, newMovie]);
+
+    setTitle('');
+    setDescription('');
+    setPosterURL('');
+    setRating(0);
+};
+
+    Cara pertama menggunakan hook useState untuk mengelola state lokal di komponen Add. Setiap kali nilai input berubah, state akan diperbarui menggunakan fungsi setter seperti setTitle, setDescription, setPosterURL, dan setRating. Kemudian, saat tombol "Add Movie" ditekan, fungsi addMovie akan menambahkan film baru ke dalam daftar film dengan menggabungkan film baru ke dalam array movies menggunakan spread operator ....
+
+// 2
+const addMovie = () => {
+    const newMovie = {
+        title: title,
+            description: description,
+            posterURL: posterURL,
+            rating: rating
+    };
+    setMovies([...movies, newMovie]);
+
+    setTitle('');
+    setDescription('');
+    setPosterURL('');
+    setRating(0);
+};
+
+    Cara kedua menggunakan prop movies dan setMovies yang diterima dari parent komponen. Prop movies merupakan array yang berisi daftar film, dan setMovies adalah fungsi untuk memperbarui state movies yang berada di parent komponen.
+
+
+    Kedua cara tersebut pada dasarnya memiliki tujuan yang sama, yaitu untuk menambahkan film baru ke dalam daftar film. Perbedaannya terletak pada pengelolaan state: cara pertama menggunakan state lokal dengan useState, sedangkan cara kedua menggunakan state dari parent komponen melalui prop dan fungsi setter.
+*/

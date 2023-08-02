@@ -20,4 +20,4 @@ const HomeMovie = ({ setFilmDesc }) => {
 	);
 };
 
-export default HomeMovie;
+export default HomeMovie
